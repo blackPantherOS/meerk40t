@@ -478,7 +478,7 @@ class CustomStatusBar(wx.StatusBar):
                     self.strokewidth_label.Show()
                 # Centering in Y
                 ht = self.strokewidth_label.GetCharHeight()
-                rect.y = old_y + (old_ht - ht) / 2
+                rect.y = int(old_y + (old_ht - ht) / 2)
                 rect.height = ht
                 self.strokewidth_label.SetRect(rect)
                 # reset to previous values
@@ -487,9 +487,9 @@ class CustomStatusBar(wx.StatusBar):
                 rect.x += wd
                 # Make the next two elements smaller
                 wd = wd / 2
-            rect.width = wd
+            rect.width = int(wd)
             self.spin_width.SetRect(rect)
-            rect.x += wd
+            rect.x += int(wd)
             self.combo_units.SetRect(rect)
 
             rect = self.GetFieldRect(self.pos_colorbar)

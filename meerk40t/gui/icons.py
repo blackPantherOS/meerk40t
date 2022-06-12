@@ -28,7 +28,7 @@ class PyEmbeddedImage(py_embedded_image):
         image = py_embedded_image.GetImage(self)
         if resize is not None:
             if isinstance(resize, int) or isinstance(resize, float):
-                image = image.Scale(resize, resize)
+                image = image.Scale(int(resize), int(resize))
             else:
                 image = image.Scale(*resize)
         if rotate is not None:
